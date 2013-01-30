@@ -14,6 +14,14 @@ module Ember
         end
       end
 
+
+      def class_name
+        (class_path + [file_name]).map!{ |m| m.camelize }.join()
+      end
+
+      def handlebars_template_path
+        File.join( class_path, file_name)
+      end
     end
   end
 end
