@@ -42,7 +42,7 @@ class BootstrapGeneratorTest < Rails::Generators::TestCase
         /Dummy = Ember.Application.create()/
 
       assert_file "#{ember_path}/store.js.#{engine}".sub('.js.js','.js')
-      assert_file "#{ember_path}/routes/app_router.js.#{engine}".sub('.js.js','.js')
+      assert_file "#{ember_path}/router.js.#{engine}".sub('.js.js','.js')
       assert_file "#{ember_path}/#{application_name.underscore}.js.#{engine}".sub('.js.js','.js')
     end
 
@@ -58,6 +58,7 @@ class BootstrapGeneratorTest < Rails::Generators::TestCase
     end
 
     assert_directory "#{ember_path}/routes"
+
   end
 
   def ember_path

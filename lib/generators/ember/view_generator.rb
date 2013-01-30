@@ -24,8 +24,9 @@ module Ember
 
         template 'view.handlebars', File.join('app/assets/javascripts/templates', class_path, "#{file_name}.handlebars")
 
-        invoke('ember:controller', [ name ], options) unless options[:skip_controller]
-        
+        invoke('ember:controller', [ file_name ], options) unless options[:skip_controller]
+        invoke('ember:route', [ file_name ], options)
+
         puts name
 
       end
